@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+    <title>JamesTech Dashboard</title>
+    <link  href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <header class="top-header">
+    <h1 class="main-logo">
+        To<span> Do</span><span> App</span>
+    </h1>
+    <div class="hamburger" id="hamburger">
+      ☰
+    </div>
+</header>
+    <div class="container">
+        <!--Sidebar -->
+      ~  <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li class="active">Dashboard</li>
+                    <li>Tasks</li>
+                    <li>Analytics</li>
+                    <li>Messages</li>
+                    <li>Settings</li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="overlay"></div>
+        <!-- Main -->
+        <main class="main-content">
+            <div class="topbar">
+                <div>
+                    <h2>
+                        Welcome back, James 👋
+                    </h2>
+                    <p>
+                        Here's your productivity overview
+                    </p>
+                </div>
+                <div class="profile">
+                    <img src="src/images/profile.png" alt="profile">
+                </div>
+            </div>
+            <section class="stats">
+                <div class="stat-card">
+                    <h3>24</h3>
+                    <p>Tasks Completed</p>
+                </div>
+                <div class="stat-card">
+                    <h3>8</h3>
+                    <p>Pending Tasks</p>
+                </div>
+                <div class="stat-card">
+                    <h3>86%</h3>
+                    <p>Productivity</p>
+                </div>
+            </section>
+            <section class="dashboard-grid">
+                <div class="glass-card todo-section">
+                    <h2>To-Do List</h2>
+                    <div class="task-input">
+                        <input
+                        type="text"
+                        placeholder="Add new task">
+                        <button>Add</button>
+                    </div>
+                    <ul class="task-list">
+                        <li>
+                            <span>
+                                Complete dashboard UI
+                            </span>
+                            <div class="actions">
+                                <button>✓</button>
+                                <button>🗑</button>
+                            </div>
+                        </li>
+                        <li>
+                            <span>
+                                Prepare internship report
+                            </span>
+
+                            <div class="actions">
+
+                                <button>✓</button>
+
+                                <button>🗑</button>
+
+                            </div>
+
+                        </li>
+
+                        <li class="completed">
+
+                            <span>
+                                Finish Level 1 Project
+                            </span>
+
+                            <div class="actions">
+
+                                <button>✓</button>
+
+                                <button>🗑</button>
+
+                            </div>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Activity -->
+
+                <div class="glass-card">
+
+                    <h2>Recent Activity</h2>
+
+                    <div class="activity">
+
+                        <p>
+                            ✅ Website deployed successfully
+                        </p>
+
+                        <p>
+                            🎨 Glassmorphism UI completed
+                        </p>
+
+                        <p>
+                            🚀 New internship project started
+                        </p>
+
+                        <p>
+                            📈 Productivity increased
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Analytics -->
+
+                <div class="glass-card analytics">
+
+                    <h2>Weekly Progress</h2>
+
+                    <div class="progress-circle">
+
+                        <div class="inner-circle">
+
+                            86%
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Quote -->
+
+                <div class="glass-card quote">
+
+                    <h2>Motivation</h2>
+
+                    <p>
+                        “Consistency beats motivation.”
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+<script src="src/js/script.js"></script>
+</html>
