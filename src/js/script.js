@@ -1,3 +1,4 @@
+document.documentElement.style.scrollBehavior = "smooth";
 console.log("JamesTech Dashboard Loaded");
 const hamburger =
 document.getElementById("hamburger");

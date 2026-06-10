@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition:0.3s ease;
 }
 html{
     scroll-behavior: smooth;
@@ -19,6 +18,9 @@ body{
     color: white;
     min-height: 100vh;
     overflow-x: hidden;
+    overscroll-behavior-y: contain;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 .top-header{
     width: 100%;
@@ -151,7 +153,9 @@ body{
     padding: 25px;
     border-radius: 20px;
     border:1px solid rgba(255,255,255,0.1);
-    transition: 0.3s;
+    transition: transform 0.3s ease,
+    background 0.3s ease,
+    opacity 0.3s ease;
 }
 .stat-card:hover{
     transform: translateY(-8px);
