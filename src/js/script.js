@@ -1,3 +1,57 @@
+const setupScreen =
+document.getElementById("setupScreen");
+const createAccountBtn =
+document.getElementById("createAccountBtn");
+checkAccount();
+function checkAccount(){
+    const profile =
+    localStorage.getItem("userProfile");
+    if(profile){
+        setupScreen.classList.add("hidden");
+        loadProfile();
+    }
+}
+createAccountBtn.addEventListener("click", () => {
+    const name =
+    document.getElementById("setupName").value;
+    const quote =
+    document.getElementById("setupQuote").value;
+    const imageFile =
+    document.getElementById("setupImage").files[0];
+    if(!name){
+        alert("Enter your name");
+        return;
+    }
+    const reader = new FileReader();
+    reader.onload = function(e){
+        const profile = {
+            name: name,
+            quote: quote,
+            image: e.target.result
+        };
+        localStorage.setItem(
+            "userProfile",
+            JSON.stringify(profile)
+        );
+        setupScreen.classList.add("hidden");
+        loadProfile();
+    };
+    if(imageFile){
+        reader.readAsDataURL(imageFile);
+    }else{
+        const profile = {
+            name: name,
+            quote: quote,
+            image: "src/images/profile.png"
+        };
+        localStorage.setItem(
+            "userProfile",
+            JSON.stringify(profile)
+        );
+        setupScreen.classList.add("hidden");
+        loadProfile();
+    }
+});
 document.documentElement.style.scrollBehavior = "smooth";
 console.log("JamesTech Dashboard Loaded");
 // Sidebar Toggle
