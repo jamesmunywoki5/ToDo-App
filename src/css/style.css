@@ -292,6 +292,58 @@ body{
         text-align: center;
     }
 }
+.setup-screen{
+    position: fixed;
+    inset: 0;
+    background: rgba(15,23,42,0.98);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.setup-card{
+    width: 90%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.08);
+    -webkit-backdrop-filter: 20px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.setup-card h1{
+    text-align: center;
+    margin-bottom: 25px;
+}
+.setup-card input{
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+.setup-card button{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    background: linear-gradient(
+        45deg,
+        #3b82f6,
+        #06b6d4
+    );
+}
+.setup-card button:hover{
+    transform: translateY(-2px);
+}
+.hidden{
+    display:none;
+}
 /* RESPONSIVE DESIGN */
 /* Tablets */
 @media (max-width: 1024px){
