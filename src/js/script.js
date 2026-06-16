@@ -73,8 +73,7 @@ function loadProfile(){
     profile.image;
 }
 // main script
-document.documentElement.style.scrollBehavior = "smooth";
-console.log("JamesTech Dashboard Loaded");
+
 // Sidebar Toggle
 const hamburger = document.getElementById("hamburger");
 const sidebar = document.querySelector(".sidebar");
@@ -149,6 +148,26 @@ function loadTasks() {
         taskList.appendChild(li);
     });
 }
+function updateStats(){
+    const tasks = getTasks();
+    const completed =
+    tasks.filter(task => task.completed).length;
+    const pending =
+    tasks.filter(task => !task.completed).length;
+    const productivity =
+    tasks.length > 0
+    ? Math.round((completed / tasks.length) * 100)
+    : 0;
+    document.getElementById("completedTasks")
+        .textContent = completed;
+    document.getElementById("pendingTasks")
+        .textContent = pending;
+    document.getElementById("productivity")
+        .textContent = productivity + "%";
+    document.getElementById("progressPercentage")
+        .textContent = productivity + "%";
+};
+updateStats();
 // Toggle Complete
 function toggleTask(index) {
     const tasks = getTasks();
