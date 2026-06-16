@@ -1,3 +1,4 @@
+// User Profile Setup
 const setupScreen =
 document.getElementById("setupScreen");
 const createAccountBtn =
@@ -52,6 +53,26 @@ createAccountBtn.addEventListener("click", () => {
         loadProfile();
     }
 });
+function loadProfile(){
+    const profile =
+    JSON.parse(
+        localStorage.getItem("userProfile")
+    );
+    if(!profile) return;
+    document.getElementById(
+        "welcomeMessage"
+    ).textContent =
+    `Welcome back, ${profile.name} 👋`;
+    document.getElementById(
+        "motivationQuote"
+    ).textContent =
+    profile.quote;
+    document.getElementById(
+        "profileImage"
+    ).src =
+    profile.image;
+}
+// main script
 document.documentElement.style.scrollBehavior = "smooth";
 console.log("JamesTech Dashboard Loaded");
 // Sidebar Toggle
