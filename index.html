@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
+    <div class="setup-screen" id="setupScreen">
+        <div class="setup-card">
+            <h1>Create Your Account</h1>
+            <input type="text" id="setupName" placeholder="Enter your name">
+            <input type="text"id="setupQuote"placeholder="Your motivation quote">
+            <label for="setupImage">Upload profile image</label>
+            <input type="file" id="setupImage" title="Upload profile image">
+            <button id="createAccountBtn">Create Account</button>
+        </div>
+    </div>
     <header class="top-header">
     <h1 class="main-logo">
         To<span> Do</span><span> App</span>
@@ -64,72 +74,21 @@
                 <div class="glass-card todo-section">
                     <h2>To-Do List</h2>
                     <div class="task-input">
-                        <input
-                        type="text"
-                        placeholder="Add new task">
-                        <button>Add</button>
+                        <input type="text" id="taskInput" placeholder="Add new task">
+                        <button id="addTaskBtn">Add</button>
                     </div>
-                    <ul class="task-list">
-                        <li>
-                            <span>
-                                Complete dashboard UI
-                            </span>
-                            <div class="actions">
-                                <button>✓</button>
-                                <button>🗑</button>
-                            </div>
-                        </li>
-                        <li>
-                            <span>
-                                Prepare internship report
-                            </span>
-
-                            <div class="actions">
-
-                                <button>✓</button>
-
-                                <button>🗑</button>
-
-                            </div>
-
-                        </li>
-
-                        <li class="completed">
-
-                            <span>
-                                Finish Level 1 Project
-                            </span>
-
-                            <div class="actions">
-
-                                <button>✓</button>
-
-                                <button>🗑</button>
-
-                            </div>
-
-                        </li>
-
-                    </ul>
-
+                    <ul class="task-list" id="taskList"></ul>
                 </div>
-
                 <!-- Activity -->
-
                 <div class="glass-card">
-
                     <h2>Recent Activity</h2>
-
                     <div class="activity">
-
                         <p>
                             ✅ Website deployed successfully
                         </p>
-
                         <p>
                             🎨 Glassmorphism UI completed
                         </p>
-
                         <p>
                             🚀 New internship project started
                         </p>
@@ -143,17 +102,11 @@
                 </div>
 
                 <!-- Analytics -->
-
                 <div class="glass-card analytics">
-
                     <h2>Weekly Progress</h2>
-
                     <div class="progress-circle">
-
                         <div class="inner-circle">
-
                             86%
-
                         </div>
 
                     </div>
