@@ -2,120 +2,288 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JamesTech Dashboard</title>
-    <link  href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
+    <!-- ACCOUNT SETUP -->
     <div class="setup-screen" id="setupScreen">
         <div class="setup-card">
             <h1>Create Your Account</h1>
             <input type="text" id="setupName" placeholder="Enter your name">
-            <input type="text"id="setupQuote"placeholder="Your motivation quote">
+            <input type="text" id="setupQuote"placeholder="Your motivation quote">
             <label for="setupImage">Upload profile image</label>
-            <input type="file" id="setupImage" title="Upload profile image">
+            <input type="file" id="setupImage">
             <button id="createAccountBtn">Create Account</button>
         </div>
     </div>
-    <header class="top-header">
+<header class="top-header">
     <h1 class="main-logo">
-        To<span> Do</span><span> App</span>
+       To<span> Do</span><span> App</span>
     </h1>
     <div class="hamburger" id="hamburger">
-      ☰
+        ☰
     </div>
 </header>
-    <div class="container">
-        <!--Sidebar -->
-        <aside class="sidebar">
-            <nav>
-                <ul>
-                    <li class="active">Dashboard</li>
-                    <li>Tasks</li>
-                    <li>Analytics</li>
-                    <li>Messages</li>
-                    <li>Settings</li>
-                </ul>
-            </nav>
-        </aside>
-        <div class="overlay"></div>
-        <!-- Main -->
-        <main class="main-content">
-            <div class="topbar">
-                <div>
-                    <h2 id="welcomeMessage">
-                        Welcome back,
-                    </h2>
-                    <p>
-                        Here's your productivity overview
-                    </p>
-                </div>
-                <div class="profile">
-                    <img id="profileImage" src="src/images/profile.png" alt="profile">
-                </div>
-            </div>
-            <section class="stats">
-                <div class="stat-card">
-                    <h3>24</h3>
-                    <p>Tasks Completed</p>
-                </div>
-                <div class="stat-card">
-                    <h3>8</h3>
-                    <p>Pending Tasks</p>
-                </div>
-                <div class="stat-card">
-                    <h3>86%</h3>
-                    <p>Productivity</p>
-                </div>
-            </section>
-            <section class="dashboard-grid">
-                <div class="glass-card todo-section">
-                    <h2>To-Do List</h2>
-                    <div class="task-input">
-                        <input type="text" id="taskInput" placeholder="Add new task">
-                        <button id="addTaskBtn">Add</button>
-                    </div>
-                    <ul class="task-list" id="taskList"></ul>
-                </div>
-                <!-- Activity -->
-                <div class="glass-card">
-                    <h2>Recent Activity</h2>
-                    <div class="activity">
-                        <p>
-                            ✅ Website deployed successfully
-                        </p>
-                        <p>
-                            🎨 Glassmorphism UI completed
-                        </p>
-                        <p>
-                            🚀 New internship project started
-                        </p>
-                        <p>
-                            📈 Productivity increased
-                        </p>
-                    </div>
-                </div>
-                <!-- Analytics -->
-                <div class="glass-card analytics">
-                    <h2>Weekly Progress</h2>
-                    <div class="progress-circle">
-                        <div class="inner-circle">
-                            86%
-                        </div>
-                    </div>
-                </div>
-                <!-- Quote -->
-                <div class="glass-card quote">
-                    <h2>Motivation</h2>
-                    <p id="motivationQuote">
-                        “Consistency beats motivation.”
-                    </p>
-                </div>
-            </section>
-        </main>
+<div class="container">
+    <!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+    <nav>
+        <ul>
+          <li id="navDashboard" class="nav-item active">Dashboard</li>
+          <li id="navTasks"class="nav-item">Tasks</li>
+          <li id="navAnalytics"class="nav-item">Analytics</li>
+          <li id="navMessages" class="nav-item">Messages </li>
+          <li id="navSettings" class="nav-item">Settings</li>
+        </ul>
+    </nav>
+</aside>
+    <div class="overlay" id="overlay"></div>
+    <!-- MAIN CONTENT -->
+<main class="main-content">
+  <div class="topbar">
+     <div>
+     <h2 id="welcomeMessage">
+            Welcome Back
+    </h2>
+    <p>
+        Here's your productivity overview.
+    </p>
     </div>
-</body>
+    <div class="profile">
+        <img id="profileImage" src="src/images/profile.png" alt="Profile">
+    </div>
+  </div>
+<!-- DASHBOARD SECTION -->
+<section id="dashboardSection" class="page-section">
+    <section class="stats">
+        <div class="stat-card">
+            <h3 id="dashboardCompleted">24</h3>
+            <p>Tasks Completed</p>
+        </div>
+        <div class="stat-card">
+            <h3 id="dashboardPending">8</h3>
+            <p>Pending Tasks</p>
+        </div>
+        <div class="stat-card">
+            <h3 id="dashboardProductivity"></h3>   
+            <p>Productivity</p>
+        </div>
+    </section>
+    <section class="dashboard-grid">
+        <div class="glass-card todo-section">
+            <h2>Quick Add Tasks</h2>
+            <div class="task-input">
+                <input type="text" id="taskInput" placeholder="Add new task">
+                <button id="addTaskBtn">Add</button>
+            </div>
+            <ul class="task-list" id="taskList">
+            </ul>
+        </div>
+        <div class="glass-card">
+            <h2>Recent Activity</h2>
+            <div class="activity">
+                <p>✅ Website deployed successfully</p>
+                <p>🎨 Glassmorphism UI completed</p>
+                <p>🚀 New internship project started</p>
+                <p>📈 Productivity increased</p>
+            </div>
+        </div>
+        <div class="glass-card analytics">
+            <h2>Weekly Progress</h2>
+            <div class="progress-circle">
+            <div class="inner-circle">86%</div>
+        </div>
+        </div>
+        <div class="glass-card quote">
+            <h2>Motivation</h2>
+            <p id="motivationQuote">Consistency beats motivation.</p>
+        </div>
+    </section>
+</section>
+<!-- TASKS SECTION -->
+<section id="tasksSection" class="page-section hidden">
+    <div class="glass-card">
+        <h2>Task Manager</h2>
+        <div class="task-input">
+            <input type="text" id="taskInputPage" placeholder="Enter task">
+            <button id="addTaskPageBtn">Add Task</button>
+        </div>
+        <ul id="taskPageList" class="task-list"></ul>
+    </div>
+</section>
+<!-- ANALYTICS SECTION -->
+<section id="analyticsSection"class="page-section hidden">
+    <div class="glass-card">
+        <h2>Analytics Dashboard</h2>
+        <div class="stats">
+            <div class="stat-card">
+                <h3 id="totalTasks">0</h3>
+                <p>Total Tasks</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="completedTasks">0</h3>
+                <p>Completed Tasks</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="pendingTasks">0</h3>
+                <p>Pending Tasks</p>
+            </div>
+        </div>
+    <div class="glass-card">
+        <h3>Productivity Overview</h3>
+        <p>
+            Monitor your weekly performance,
+            completed tasks and efficiency.
+        </p>
+    </div>
+</div>
+</section>
+<!-- MESSAGES SECTION -->
+<section id="messagesSection" class="page-section hidden">
+    <div class="glass-card">
+
+                    <h2>Messages</h2>
+
+                    <div
+                        id="messageContainer"
+                        class="message-container">
+
+                        <div class="message-card">
+
+                            <strong>
+                                System
+                            </strong>
+
+                            <p>
+                                Welcome to JamesTech Dashboard.
+                            </p>
+
+                        </div>
+
+                        <div class="message-card">
+
+                            <strong>
+                                Assistant
+                            </strong>
+
+                            <p>
+                                Stay focused and complete
+                                your goals today.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="task-input">
+
+                        <input
+                            type="text"
+                            id="messageInput"
+                            placeholder="Type your message">
+
+                        <button
+                            id="sendMessageBtn">
+                            Send
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- SETTINGS SECTION -->
+            <section
+                id="settingsSection"
+                class="page-section hidden">
+
+                <div class="glass-card">
+
+                    <h2>
+                        Settings
+                    </h2>
+
+                    <div class="setting-item">
+
+                        <label for="darkModeToggle">
+                            Dark Mode
+                        </label>
+
+                        <input
+                            type="checkbox"
+                            id="darkModeToggle">
+
+                    </div>
+
+                    <div class="setting-item">
+
+                        <label for="notificationToggle">
+                            Notifications
+                        </label>
+
+                        <input
+                            type="checkbox"
+                            id="notificationToggle"
+                            checked>
+
+                    </div>
+
+                    <div class="setting-item">
+
+                        <label for="autoSaveToggle">
+                            Auto Save
+                        </label>
+
+                        <input
+                            type="checkbox"
+                            id="autoSaveToggle"
+                            checked>
+
+                    </div>
+
+                    <div class="setting-item">
+
+                        <label for="themeSelect">
+                            Theme
+                        </label>
+
+                        <select id="themeSelect">
+
+                            <option value="blue">
+                                Blue
+                            </option>
+
+                            <option value="purple">
+                                Purple
+                            </option>
+
+                            <option value="green">
+                                Green
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <button
+                        id="saveSettingsBtn">
+                        Save Settings
+                    </button>
+
+                </div>
+            </section>
+</main>
+    </div>
+<footer class="footer">
+    <p>
+      © 2026 JamesTech Dashboard.
+      All Rights Reserved.
+    </p>
+</footer>
 <script src="src/js/script.js"></script>
+</body>
 </html>
