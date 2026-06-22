@@ -84,11 +84,8 @@
         </div>
         <div class="glass-card">
             <h2>Recent Activity</h2>
-            <div class="activity">
-                <p>✅ Website deployed successfully</p>
-                <p>🎨 Glassmorphism UI completed</p>
-                <p>🚀 New internship project started</p>
-                <p>📈 Productivity increased</p>
+            <div class="activity" id="activityLog">
+                <p>✅ completed tasks will appear here </p>
             </div>
         </div>
         <div class="glass-card analytics">
@@ -146,7 +143,6 @@
     <div class="glass-card">
 
                     <h2>Messages</h2>
-
                     <div
                         id="messageContainer"
                         class="message-container">
@@ -200,80 +196,33 @@
             <section
                 id="settingsSection"
                 class="page-section hidden">
-
                 <div class="glass-card">
-
-                    <h2>
-                        Settings
-                    </h2>
-
+                    <h2>Settings</h2>
                     <div class="setting-item">
-
-                        <label for="darkModeToggle">
-                            Dark Mode
-                        </label>
-
-                        <input
-                            type="checkbox"
-                            id="darkModeToggle">
-
+                        <label for="darkModeToggle">Dark Mode</label>
+                        <input type="checkbox" id="darkModeToggle">
                     </div>
-
                     <div class="setting-item">
-
-                        <label for="notificationToggle">
-                            Notifications
-                        </label>
-
-                        <input
-                            type="checkbox"
-                            id="notificationToggle"
-                            checked>
-
+                        <label for="notificationToggle">Notifications</label>
+                        <input type="checkbox" id="notificationToggle" checked>
                     </div>
-
                     <div class="setting-item">
-
-                        <label for="autoSaveToggle">
-                            Auto Save
-                        </label>
-
-                        <input
-                            type="checkbox"
-                            id="autoSaveToggle"
-                            checked>
-
+                        <label for="autoSaveToggle">Auto Save</label>
+                        <input type="checkbox" id="autoSaveToggle" checked>
                     </div>
-
                     <div class="setting-item">
-
-                        <label for="themeSelect">
-                            Theme
-                        </label>
-
+                        <label for="themeSelect">Theme</label>
                         <select id="themeSelect">
-
-                            <option value="blue">
-                                Blue
-                            </option>
-
-                            <option value="purple">
-                                Purple
-                            </option>
-
-                            <option value="green">
-                                Green
-                            </option>
-
+                            <option value="blue">Blue</option>
+                            <option value="purple">Purple</option>
+                            <option value="green">Green</option>
                         </select>
-
                     </div>
-
-                    <button
-                        id="saveSettingsBtn">
-                        Save Settings
-                    </button>
-
+                    <div class="setting-item">
+                       <label for="resetAccountBtn">Log Out</label>
+                       <input type="button"id="resetAccountBtn">
+                    </div>
+                    <button id="saveSettingsBtn">Save Settings</button>
                 </div>
             </section>
 </main>
